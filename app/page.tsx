@@ -1,4 +1,8 @@
-import Image from "next/image";
+import type { ImgHTMLAttributes } from "react";
+
+function Image({ priority: _priority, ...props }: ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) {
+  return <img {...props} />;
+}
 
 const phone = "916287357549";
 const wa = `https://wa.me/${phone}?text=Hi%20InstaGrow%20Solutions%2C%20I%27d%20like%20a%20free%20consultation.`;
