@@ -1,7 +1,10 @@
 import type { ImgHTMLAttributes } from "react";
 
-function Image({ priority: _priority, ...props }: ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) {
-  return <img {...props} />;
+function Image({ priority: _priority, src, ...props }: ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) {
+  const resolvedSrc = typeof src === "string" && src.startsWith("/")
+    ? `${import.meta.env.BASE_URL}${src.slice(1)}`
+    : src;
+  return <img src={resolvedSrc} {...props} />;
 }
 
 const phone = "916287357549";
