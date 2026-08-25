@@ -1,68 +1,50 @@
 import Image from "next/image";
 
+const phone = "916287357549";
+const wa = `https://wa.me/${phone}?text=Hi%20InstaGrow%20Solutions%2C%20I%27d%20like%20a%20free%20consultation.`;
+
+function Logo() {
+  return <a className="brand" href="#top" aria-label="InstaGrow Solutions home"><span className="brand-mark"><Image src="/instagrow-logo.png" alt="" width={540} height={540} priority /></span><span className="brand-name">Insta<span>Grow</span><small>Solutions</small></span></a>;
+}
+
+const services = [
+  ["M", "Meta Ads", "Facebook & Instagram Ads", "Reach the right audience with targeted campaigns designed to deliver qualified leads and real sales."],
+  ["G", "Google Ads", "Search, Display & YouTube", "Capture high-intent customers through Google Search, Display, YouTube and Performance Max."],
+  ["◎", "Lead Generation", "Funnels that convert", "Generate high-quality leads through proven strategies, ad funnels and conversion-first landing pages."],
+  ["♥", "Social Media", "Management & growth", "Content, publishing and engagement that keeps your business active, relevant and growing."],
+  ["✎", "Ad Creative", "Posters & campaign design", "Scroll-stopping creatives that grab attention, communicate clearly and drive action."],
+  ["▶", "Video Ads", "Stories that sell", "High-converting video ads and AI UGC concepts that engage your audience and boost conversions."],
+  ["◫", "Landing Pages", "Built for conversion", "Fast, focused landing pages designed to turn visitors into leads and customers."],
+  ["☏", "WhatsApp Business", "Automation & follow-up", "Auto-replies, lead management and seamless communication for faster conversions."],
+];
+
+const plans = [
+  { name: "Starter Plan", intro: "Perfect for businesses getting started with digital ads.", items: ["Campaign setup", "Audience & location targeting", "Ad account & pixel setup", "Basic creative guidance", "30 days monitoring", "Performance reports"] },
+  { name: "Growth Plan", intro: "Ideal for businesses ready to scale consistently.", popular: true, items: ["Everything in Starter Plan", "Meta Ads management", "Facebook & Instagram handling", "3 creative posters / month", "Daily monitoring & optimization", "Monthly performance report"] },
+  { name: "Premium Plan", intro: "Complete management for maximum growth.", premium: true, items: ["Everything in Growth Plan", "Multiple campaign setup", "5+ creative posters / month", "Advanced audience targeting", "A/B testing & scaling strategy", "Priority support"] },
+];
+
 export default function Home() {
-  return (
-    <main>
-      <nav className="nav shell" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="InstaGrow Solutions home"><span className="brand-mark"><Image src="/instagrow-logo.png" alt="InstaGrow Solutions" width={540} height={540} priority /></span><span className="brand-name">Insta<span>Grow</span><small>Solutions</small></span></a>
-        <div className="nav-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">Why us</a></div>
-        <a className="nav-cta" href="tel:+916287357549">Let’s talk <span>↗</span></a>
-      </nav>
-      <section className="hero shell" id="top">
-        <div className="hero-copy">
-          <div className="eyebrow"><i /> Performance marketing studio</div>
-          <h1>We turn attention<br />into <em>growth.</em></h1>
-          <p>Bold campaigns. Smarter strategy. Measurable results. We help ambitious brands reach the right people and convert every click into momentum.</p>
-          <div className="hero-actions"><a className="button primary" href="tel:+916287357549">Start growing <span>↗</span></a><a className="button ghost" href="#work">See our work <span>↓</span></a></div>
-          <div className="proof"><strong>100+</strong><span>brands trust us<br />across India</span><div className="faces"><b>IG</b><b>ROI</b><b>24/7</b></div></div>
-        </div>
-        <div className="hero-visual" aria-label="Marketing performance overview">
-          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-          <div className="metric-card main-metric"><div className="metric-top"><span>Campaign performance</span><b>LIVE</b></div><div className="revenue"><small>Return on ad spend</small><strong>5.2<span>x</span></strong><em>+38.4%</em></div><div className="chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="chart-label"><span>Week 1</span><span>Week 4</span></div></div>
-          <div className="float-card leads"><span className="float-icon">◎</span><small>Qualified leads</small><strong>1,248</strong><em>+35%</em></div>
-          <div className="float-card conversion"><small>Conversion rate</small><strong>8.6%</strong><div><i /><i /><i /><i /><i /></div></div>
-          <div className="tag tag-meta">META ADS</div><div className="tag tag-google">GOOGLE ADS</div>
-        </div>
-      </section>
-      <div className="ticker" aria-label="Services overview"><div>STRATEGY <i/> META ADS <i/> GOOGLE ADS <i/> CONTENT <i/> LEAD GENERATION <i/> SOCIAL MEDIA <i/> PERFORMANCE</div></div>
+  return <main>
+    <header className="site-header"><nav className="nav shell" aria-label="Main navigation"><Logo /><div className="nav-links"><a href="#top">Home</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#about">Why Us</a><a href="#solutions">Pricing</a><a href="#founder">Founder</a></div><a className="wa-pill" href={wa}>● Chat on WhatsApp</a></nav></header>
 
-      <section className="services shell section" id="services">
-        <div className="section-head"><div><span className="kicker">01 — WHAT WE DO</span><h2>Everything you need<br />to <em>grow online.</em></h2></div><p>Strategy, creative and media working as one focused growth engine for your business.</p></div>
-        <div className="service-grid">
-          <article className="service-card featured"><div className="service-no">01</div><div className="service-icon">↗</div><h3>Performance Advertising</h3><p>High-intent campaigns across Meta and Google, built to lower acquisition costs and scale what works.</p><div className="chips"><span>Meta Ads</span><span>Google Ads</span><span>Retargeting</span></div></article>
-          <article className="service-card"><div className="service-no">02</div><div className="service-icon teal">◎</div><h3>Lead Generation</h3><p>Conversion-first funnels and landing pages that turn the right audience into qualified conversations.</p><div className="chips"><span>Funnels</span><span>Landing pages</span></div></article>
-          <article className="service-card"><div className="service-no">03</div><div className="service-icon navy">✦</div><h3>Social Media</h3><p>Scroll-stopping content, consistent publishing and community growth that keeps your brand relevant.</p><div className="chips"><span>Content</span><span>Management</span></div></article>
-          <article className="service-card wide"><div className="service-no">04</div><div><h3>Creative that earns attention.</h3><p>From ad posters and short-form video to complete campaign concepts, every asset is designed with a job to do.</p></div><div className="creative-stack"><b>ADS</b><b>VIDEO</b><b>DESIGN</b></div></article>
-          <article className="service-card dark-wide"><div className="service-no">05</div><div className="service-icon teal">◫</div><h3>WhatsApp Automation</h3><p>Fast replies, better follow-up and organized lead management—without losing the human touch.</p></article>
-        </div>
-      </section>
+    <section className="hero shell" id="top">
+      <div className="hero-copy"><div className="hero-kicker">Grow your business. Get <b>quality leads.</b> Maximize ROI.</div><h1>We drive traffic.<br />We generate <em>leads.</em><br />We grow your business.</h1><p>Performance-driven advertising solutions that help brands <strong>attract the right audience, increase conversions and scale faster.</strong></p><div className="short-rule" /><div className="hero-benefits"><span><i>◎</i>Target Right<br />Audience</span><span><i>↗</i>Increase<br />Leads & Sales</span><span><i>₹</i>Reduce Cost<br />& Waste</span><span><i>▥</i>Maximize ROI<br />& Growth</span></div><div className="hero-actions"><a className="btn orange" href={wa}>➤ Get free consultation</a><a className="btn outline" href="tel:+916287357549">☎ Call now</a></div><div className="trusted">♢ Trusted by 100+ Businesses Across India</div></div>
+      <div className="hero-scene" aria-label="Digital marketing campaign performance dashboard"><div className="teal-blob"/><div className="laptop"><div className="screen"><header>Marketing Performance <b>•••</b></header><div className="screen-stats"><span>Leads<strong>1,250</strong><em>+35%</em></span><span>Cost Per Lead<strong>₹8</strong><em>-20%</em></span><span>Conversions<strong>860</strong><em>+42%</em></span></div><div className="screen-chart"><i/><i/><i/><i/><i/><i/><i/><i/></div></div><div className="keyboard"/></div><div className="data-pop pop-one"><b>f</b><span>Facebook Ads<strong>1,250</strong><em>+35%</em></span></div><div className="data-pop pop-two"><b>G</b><span>Google Ads<strong>1,150</strong><em>+32%</em></span></div><div className="data-pop pop-three"><b>◎</b><span>Quality Leads<strong>840</strong><em>+45%</em></span></div></div>
+    </section>
+    <div className="trust-strip shell"><div><b>Trusted by businesses</b><span>UTKARSH SOLAR</span><span>NARAYANI OIL MILL</span><span>X MACHINERY</span><span>TETRACLEAN</span><span>AND 100+ MORE</span></div><div className="strip-stats"><span><b>100+</b>Happy Clients</span><span><b>250+</b>Campaigns Run</span><span><b>20 Lakhs+</b>Ad Budget Managed</span><span><b>2X–5X</b>Average ROI Growth</span></div></div>
 
-      <section className="results section" id="work">
-        <div className="shell">
-          <div className="section-head"><div><span className="kicker">02 — PROVEN IMPACT</span><h2>Real campaigns.<br /><em>Real results.</em></h2></div><p>No vanity metrics. Just meaningful outcomes that move businesses forward.</p></div>
-          <div className="result-grid">
-            <article><span>Solar energy</span><strong>1,248<small>+</small></strong><p>Qualified leads generated</p><footer><b>₹8</b> cost per lead <em>4.62x ROI</em></footer></article>
-            <article><span>Education</span><strong>980<small>+</small></strong><p>Admission enquiries</p><footer><b>₹10</b> cost per lead <em>3.91x ROI</em></footer></article>
-            <article><span>Retail / e-commerce</span><strong>2,310<small>+</small></strong><p>Orders generated</p><footer><b>₹12</b> cost per order <em>5.23x ROAS</em></footer></article>
-          </div>
-          <div className="trust-row"><p>Trusted by <strong>100+ businesses</strong> across India</p><div><span>UTKARSH</span><span>NARAYANI</span><span>CAREERPLUS</span><span>VEDICA</span><span>GOODWILL</span></div></div>
-        </div>
-      </section>
+    <section className="why section-light" id="about"><div className="section-title"><span>— WHY CHOOSE US —</span><h2>Your <em>Growth</em> is Our <b>Mission.</b></h2><p>We combine creativity, strategy and technology to deliver advertising solutions that generate real results.</p></div><div className="shell why-layout"><div className="why-image"><Image src="/instagrow-team.png" alt="InstaGrow Solutions team planning a client growth strategy" width={1536} height={1024}/></div><div className="why-cards"><article><i>◎</i><h3>Result-Oriented Approach</h3><p>We focus on real outcomes — more leads, customers and higher ROI.</p></article><article><i>♟</i><h3>Experienced & Dedicated Team</h3><p>Our skilled team works closely to deliver campaigns that perform.</p></article><article><i>▥</i><h3>Data-Driven Strategies</h3><p>Every decision is backed by data and insight for maximum performance.</p></article><article><i>♢</i><h3>Budget-Smart Solutions</h3><p>We optimise every rupee and reduce unnecessary budget waste.</p></article><article><i>✦</i><h3>Creative That Connects</h3><p>High-converting creative that grabs attention and drives action.</p></article><article><i>☏</i><h3>Transparent & Reliable</h3><p>Clear communication, regular updates and complete transparency.</p></article></div></div><div className="feature-strip shell"><span><b>100+</b>Happy Clients Across India</span><span><b>250+</b>Successful Campaigns</span><span><b>₹20 Lakhs+</b>Ad Budget Managed</span><span><b>2X–5X</b>Average ROI Growth</span><span><b>24/7</b>Support & Optimization</span></div></section>
 
-      <section className="why shell section" id="about">
-        <div className="why-intro"><span className="kicker">03 — WHY INSTAGROW</span><h2>Your growth is<br />our <em>mission.</em></h2><p>We combine sharp creative thinking, disciplined media buying and transparent reporting to build growth you can actually see.</p><a href="tel:+916287357549">Book a free consultation <span>↗</span></a></div>
-        <div className="why-grid">
-          <article><b>01</b><h3>Result-oriented</h3><p>Every decision begins with your business goal and ends with a measurable outcome.</p></article>
-          <article><b>02</b><h3>Budget smart</h3><p>We optimise every rupee, cut waste and scale the campaigns showing real potential.</p></article>
-          <article><b>03</b><h3>Clear & reliable</h3><p>Honest communication, regular updates and reporting you can understand at a glance.</p></article>
-          <article><b>04</b><h3>Always improving</h3><p>24/7 monitoring, testing and refinement keep your campaigns moving in the right direction.</p></article>
-        </div>
-      </section>
+    <section className="services" id="services"><div className="shell"><div className="section-title dark"><span>— OUR SERVICES —</span><h2>Powerful <em>Solutions.</em> Real <b>Results.</b></h2><p>From strategy to execution, we provide end-to-end digital marketing solutions that drive traffic, generate leads and grow your business.</p></div><div className="service-grid">{services.map((s,i)=><article key={s[1]}><div className={`service-icon s${i}`}>{s[0]}</div><div><h3>{s[1]}</h3><b>{s[2]}</b></div><p>{s[3]}</p><div className="service-art"><span/><span/><span/></div></article>)}</div><div className="dark-features"><span>◎ Targeted Strategies</span><span>▥ Data-Driven Campaigns</span><span>♢ Transparent Pricing</span><span>↗ Measurable Results</span><span>☏ Ongoing Support</span></div></div></section>
 
-      <section className="process section"><div className="shell"><span className="kicker">04 — HOW WE WORK</span><h2>Simple process.<br /><em>Serious momentum.</em></h2><div className="steps"><article><b>01</b><h3>Discover</h3><p>We understand your business, audience and goals.</p></article><article><b>02</b><h3>Build</h3><p>We create the strategy, campaign and content system.</p></article><article><b>03</b><h3>Launch</h3><p>We go live, measure performance and learn fast.</p></article><article><b>04</b><h3>Scale</h3><p>We optimise what works and compound your growth.</p></article></div></div></section>
+    <section className="solutions section-light" id="solutions"><div className="section-title"><span>— OUR SOLUTIONS —</span><h2>Flexible <em>Plans.</em> Powerful <b>Growth.</b></h2><p>Performance-driven marketing solutions tailored to your business goals. Choose the plan that fits your needs.</p></div><div className="shell plan-grid">{plans.map((plan)=><article className={`${plan.popular?"popular":""} ${plan.premium?"premium":""}`} key={plan.name}>{plan.popular&&<label>MOST POPULAR</label>}<header><i>{plan.premium?"♛":plan.popular?"▥":"↗"}</i><div><h3>{plan.name}</h3><p>{plan.intro}</p></div></header><ul>{plan.items.map(item=><li key={item}>✓ {item}</li>)}</ul><footer>Custom pricing based on<br />your business requirements.</footer></article>)}</div><div className="solution-points shell"><span><b>◎ Targeted Strategies</b>Right audience, right message.</span><span><b>▥ Data-Driven Approach</b>Scale what works.</span><span><b>♢ Budget Optimization</b>Zero budget wastage.</span><span><b>↗ Quality Over Quantity</b>Leads that convert.</span><span><b>☏ Dedicated Support</b>With you at every step.</span></div></section>
 
-      <section className="cta shell"><div className="cta-mark">↗</div><span className="kicker">READY WHEN YOU ARE</span><h2>Let’s turn your next<br />click into a <em>customer.</em></h2><p>Tell us where you want to grow. We’ll show you how to get there.</p><a className="button primary" href="tel:+916287357549">Call 6287 357 549 <span>↗</span></a></section>
-      <footer className="footer shell"><a className="brand" href="#top"><span className="brand-mark"><Image src="/instagrow-logo.png" alt="" width={540} height={540} /></span><span className="brand-name">Insta<span>Grow</span><small>Solutions</small></span></a><p>Performance marketing for ambitious businesses.</p><div><a href="tel:+916287357549">+91 6287 357 549</a><a href="#top">Back to top ↑</a></div></footer>
-    </main>
-  );
+    <section className="work section-light" id="work"><div className="section-title"><span>— OUR WORK —</span><h2>Real Campaigns. <em>Real Results.</em></h2><p>We don’t just run ads, we build growth engines for businesses.</p></div><div className="shell work-grid"><article><div className="case-visual solar"><span>SOLAR INDUSTRY</span><h3>Solar energy for a better tomorrow.</h3><b>GET FREE CONSULTATION</b></div><h3>Utkarsh Solar Energy</h3><p>Lead Generation Campaign</p><footer><span><b>1,248+</b>Leads</span><span><b>₹8</b>Cost / Lead</span><span><b>4.62X</b>ROI</span></footer></article><article><div className="case-visual education"><span>EDUCATION</span><h3>Admissions open. Build your success.</h3><b>ENROLL NOW</b></div><h3>CareerPlus Academy</h3><p>Admission Campaign</p><footer><span><b>980+</b>Leads</span><span><b>₹10</b>Cost / Lead</span><span><b>3.91X</b>ROI</span></footer></article><article><div className="case-visual retail"><span>RETAIL / E-COMMERCE</span><h3>Premium quality. Trusted results.</h3><b>ORDER NOW</b></div><h3>Narayani Oil Mill</h3><p>Sales Campaign</p><footer><span><b>2,310+</b>Orders</span><span><b>₹12</b>Cost / Order</span><span><b>5.23X</b>ROAS</span></footer></article><article><div className="case-visual estate"><span>REAL ESTATE</span><h3>Find your dream home.</h3><b>BOOK SITE VISIT</b></div><h3>Vedica Home Planner</h3><p>Lead Generation Campaign</p><footer><span><b>756+</b>Leads</span><span><b>₹14</b>Cost / Lead</span><span><b>4.15X</b>ROI</span></footer></article></div><div className="client-proof shell"><blockquote>“InstaGrow Solutions helped us reach the right audience and generate high-quality leads at the best cost. Highly recommended!”<b>— Amit Kumar, Director</b></blockquote><div><b>TRUSTED BY 100+ BUSINESSES ACROSS INDIA</b><p>UTKARSH · NARAYANI · X MACHINERY · TETRACLEAN · CAREERPLUS · VEDICA · GOODWILL</p></div></div></section>
+
+    <section className="founder section-light" id="founder"><div className="section-title"><span>— FOUNDER & OUR TEAM —</span><h2>Meet the <em>Founder.</em></h2></div><div className="shell founder-grid"><div className="founder-photo"><Image src="/founder-rajesh-aryan.png" alt="Rajesh Aryan, Founder of InstaGrow Solutions" width={1024} height={1536}/><div><strong>Rajesh Aryan</strong><span>Founder, InstaGrow Solutions™ · 25 Years Old</span></div></div><div className="founder-story"><span className="mini-title">A Vision for Businesses Across India</span><blockquote>“I believe digital advertising should be more than simply spending money on ads. It should help businesses reach the right audience, create meaningful opportunities and build sustainable growth.”</blockquote><p>InstaGrow Solutions was founded with a clear vision — to provide professional, performance-focused digital advertising and growth solutions to businesses across India.</p><p>Today, our dedicated team brings together strategy, performance marketing, creative design, content and technology to build solutions around each client’s unique business goals.</p><p>We believe every business is different. That’s why we understand the business first, create the right strategy, execute with precision and continuously improve what works.</p></div></div><div className="shell team-band"><div className="team-photo"><Image src="/instagrow-team.png" alt="The InstaGrow Solutions strategy, creative and performance marketing team" width={1536} height={1024}/></div><div><span className="mini-title">Our Team Approach</span><h2>One Team. One Strategy.<br /><em>Your Growth.</em></h2><div className="approach-grid"><article><b>01</b><h3>Strategy & Planning</h3><p>Understanding your business, goals and target audience.</p></article><article><b>02</b><h3>Performance Marketing</h3><p>Campaigns focused on meaningful business outcomes.</p></article><article><b>03</b><h3>Creative & Content</h3><p>Visuals and content that connect with the right audience.</p></article><article><b>04</b><h3>Data & Optimization</h3><p>Testing strategies and continuously improving campaigns.</p></article></div></div></div><div className="vision shell"><span>Our Vision</span><h2>To make better digital advertising accessible to businesses across India.</h2><a className="btn orange" href={wa}>Get Free Consultation</a></div></section>
+
+    <footer className="footer"><div className="shell"><Logo/><p>Professional, performance-focused digital growth for businesses across India.</p><div><a href={wa}>WhatsApp</a><a href="tel:+916287357549">+91 6287 357 549</a><a href="#top">Back to top ↑</a></div></div></footer>
+    <a className="floating-wa" href={wa} aria-label="Chat with InstaGrow Solutions on WhatsApp">●</a>
+  </main>;
 }
