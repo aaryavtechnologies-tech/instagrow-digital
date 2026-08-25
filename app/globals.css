@@ -215,3 +215,24 @@ a:focus-visible{outline:3px solid #006b78;outline-offset:4px;border-radius:5px}
   .btn,.wa-pill,.floating-contact,.skip-link{border:2px solid ButtonText}
   .service-grid article,.why-cards article,.plan-grid>article{border:1px solid CanvasText}
 }
+
+/* Clean service artwork frames: isolate each visual from the reference sheet. */
+.service-grid article{height:auto;min-height:0;display:flex;flex-direction:column}
+.service-image{position:relative;left:auto;right:auto;bottom:auto;width:100%;height:auto;aspect-ratio:16/10;margin-top:14px;border:1px solid #ffffff2b;border-radius:13px;overflow:hidden;background:#040912;box-shadow:inset 0 0 0 1px #008a9a18,0 12px 28px #0007}
+.service-image::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 28px #02060d55}
+.service-image img{position:absolute;width:445%;height:auto;max-width:none;object-fit:contain;transform:none}
+.service-image.crop-0 img{left:-6%;top:-106%}
+.service-image.crop-1 img{left:-110%;top:-106%}
+.service-image.crop-2 img{left:-216%;top:-100%}
+.service-image.crop-3 img{left:-322%;top:-108%}
+.service-image.crop-4 img{left:-6%;top:-214%}
+.service-image.crop-5 img{left:-110%;top:-214%}
+.service-image.crop-6 img{left:-217%;top:-207%}
+.service-image.crop-7 img{left:-323%;top:-203%}
+.service-cta{position:static;align-self:flex-start;margin-top:8px;padding-inline:2px}
+
+@media(max-width:700px){
+  .service-grid article{height:auto;padding:20px;border-radius:18px}
+  .service-image{margin-top:16px;aspect-ratio:16/10}
+  .service-cta{width:auto;margin-top:8px}
+}
